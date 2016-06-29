@@ -1,0 +1,66 @@
+prompt_command () {
+    # set an error string for the prompt, if applicable
+    if [ $? -eq 0 ]; then
+        ERRPROMPT=" "
+    else
+        ERRPROMPT=" ($?) "
+    fi
+ 
+    local BRANCH=""
+ 
+    local LOAD=`cut -d' ' -f1 /proc/loadavg`
+    #local TIME=`date +"%d.%m.%Y %H:%M:%S"`
+    local TIME=`date +"%H:%M:%S"`
+    local CURENT_PATH=`echo ${PWD/#$HOME/\~}`
+ 
+    # trim long path
+    if [ ${#CURENT_PATH} -gt "35" ]; then
+        let CUT=${#CURENT_PATH}-35
+        CURENT_PATH="...$(echo -n $PWD | sed -e "s/\(^.\{$CUT\}\)\(.*\)/\2/")"
+    fi
+ 
+    local TITLEBAR="\[\e]2;${CURENT_PATH}\a"
+ 
+    local GREEN="\[\033[0;32m\]"
+    local CYAN="\[\033[0;36m\]"
+    local BCYAN="\[\033[1;36m\]"
+    local BLUE="\[\033[0;34m\]"
+    local GRAY="\[\033[0;37m\]"
+    local DKGRAY="\[\033[1;30m\]"
+    local WHITE="\[\033[1;37m\]"
+    local RED="\[\033[0;31m\]"
+    # return color to Terminal setting for text color
+    local DEFAULT="\[\033[0;39m\]"
+ 
+    PROMPT="[ ${TIME}, ${LOAD}, ${USER}@${HOSTNAME} ]$ERRPROMPT [ ${CURENT_PATH} ]"
+ 
+    # different prompt and color for root
+    local PR="$ "
+    local USERNAME_COLORED="${GRAY}${USER}${GREEN}@${GRAY}${HOSTNAME}"
+    if [ "$UID" = "0" ]; then
+        PR="# "
+        USERNAME_COLORED="${RED}${USER}${GREEN}@${RED}${HOSTNAME}"
+    fi
+ 
+    # use only ASCII symbols in linux console
+    local DASH="\e(0q\e(B"
+    local TC="\]\e(0l\e(B\]"
+    local BC="\[\e(0\]m\[\e(B\]"
+    if [ "$TERM" = "linux" ]; then
+        TITLEBAR=""
+        DASH="-"
+        TC=""
+        BC=""
+    fi
+ 
+    local SEPARATOR=""
+    let FILLS=${COLUMNS}-${#PROMPT}
+    for (( i=0; i<$FILLS; i++ )) do
+        SEPARATOR=$SEPARATOR$DASH
+    done
+ 
+    local TOP_LINE="${TC}${CYAN}[ ${WHITE}${TIME}, ${DKGRAY}${LOAD}, ${USERNAME_COLORED} ${CYAN}]${RED}$ERRPROMPT${CYAN}[ ${GRAY}${CURENT_PATH}${CYAN} ]${GRAY}${SEPARATOR}"
+    local BOTTOM_LINE="${BC}${GREEN}${BRANCH}${CYAN}[ ${GREEN}${PR}${DEFAULT}"
+    export PS1="${TITLEBAR}\n${TOP_LINE}\n${BOTTOM_LINE}"
+}
+PROMPT_COMMAND=prompt_command

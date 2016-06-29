@@ -1,0 +1,4 @@
+BCompare files
+  bcompare "%d/%f" "%D/%F" &
+MicroEmacs Graphical diff
+  me "@gdiff" "%d/%f" "%D/%F" &

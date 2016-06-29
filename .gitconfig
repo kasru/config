@@ -1,0 +1,22 @@
+[color]
+	ui = auto
+[user]
+	name = Kiselev.Aleksandr
+	email = Aleksandr.Kiselev@infotecs.ru
+[credential]
+	helper = store
+[diff]
+	tool = bc3
+	external = git-diff-wrapper.sh
+[difftool]
+	bc3 = trustExitCode
+[merge]
+	tool = bc3
+[mergetool]
+	bc3 = trustExitCode
+[alias]
+	dt = difftool
+	mt = mergetool
+[mergetool "bc3"]
+	cmd = /usr/bin/bcompare $LOCAL $REMOTE -savetarget=$MERGED
+	trustExitCode = true

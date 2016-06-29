@@ -1,0 +1,105 @@
+XTerm*background: black
+XTerm*foreground: lightgray
+!XTerm*cursorColor: darkred
+XTerm*saveLines: 1000
+!XTerm*font: -misc-fixed-medium-r-normal-*-15-140-75-75-c-90-iso10646-*
+!XTerm*font: -*-fixed-medium-r-*-*-15-*-*-*-*-*-iso10646-*
+XTerm*font: -*-courier-medium-r-*-*-18-*-*-*-*-*-iso10646-*
+
+! Normal
+! color0    BLACK
+! color1    red
+! color2    green
+! color3    yellow
+! color4    blue (синий)
+! color5    purple (фиолетовый)
+! color6    cyan (голубой)
+! color7    white
+! Light
+! color8    darkgray
+! color9    red
+! color10    green
+! color11    yellow
+! color12    blue (синий)
+! color13    purple (фиолетовый)
+! color14    cyan (голубой)
+! color15    lightgray
+
+XTerm*color0:    #000000
+XTerm*color1:    #C00000
+XTerm*color2:    #00C000
+XTerm*color3:    #C0C000
+XTerm*color4:    #0C00C0
+XTerm*color5:    #AA00AA
+XTerm*color6:    #00AAAA
+XTerm*color7:    #FFFFFF
+XTerm*color8:    #212121
+XTerm*color9:    #FF8080
+XTerm*color10:    #80FF80
+XTerm*color11:    #FFFF88
+XTerm*color12:    #99CCFF
+XTerm*color13:    #B14CC2
+XTerm*color14:    #9BFFFF
+XTerm*color15:    #D0D0D0
+
+URxvt*color0:    #000000
+URxvt*color1:    #C00000
+URxvt*color2:    #00C000
+URxvt*color3:    #C0C000
+URxvt*color4:    #0C00C0
+URxvt*color5:    #AA00AA
+URxvt*color6:    #00AAAA
+URxvt*color7:    #FFFFFF
+URxvt*color8:    #212121
+URxvt*color9:    #FF8080
+URxvt*color10:    #80FF80
+URxvt*color11:    #FFFF88
+URxvt*color12:    #99CCFF
+URxvt*color13:    #B14CC2
+URxvt*color14:    #9BFFFF
+URxvt*color15:    #D0D0D0
+
+URxvt*saveLines: 1000
+!URxvt.font: -*-clean-medium-r-*-*-12-*-*-*-*-*-*-*
+!URxvt.boldFont: -*-clean-bold-r-*-*-12-*-*-*-*-*-*-
+!
+!URxvt.font: -misc-fixed-medium-r-normal-*-15-140-75-75-c-90-iso10646-*
+!URxvt.boldFont: -misc-fixed-bold-r-normal-*-15-140-75-75-c-90-iso10646-*
+!
+URxvt.font: -*-courier-medium-r-*-*-18-*-*-*-*-*-iso10646-*
+URxvt.boldFont: -*-courier-mediam-r-*-*-18-*-*-*-*-*-iso10646-*
+!
+!URxvt.font: -*-fixed-medium-r-*-*-15-*-*-*-*-*-iso10646-*
+!URxvt.boldFont: -*-fixed-bold-r-*-*-15-*-*-*-*-*-iso10646-*
+!
+URxvt*scrollBar: false
+URxvt.perl-lib: /home/kas/.urxvt/perl
+URxvt.perl-ext-common:  default,matcher,url-select,tabbedex
+URxvt.matcher.button:   1
+URxvt.urlLauncher:     firefox
+URxvt.underlineURLs:   true
+URxvt.pastableTabs:     true
+URxvt.keysym.M-u:      perl:url-select:select_next
+
+URxvt.tabbed.new-button: no
+URxvt.keysym.C-t:      perl:tabbedex:new_tab
+URxvt.tabbed.tabbar-fg: 15
+URxvt.tabbed.tabbar-bg: 8
+URxvt.tabbed.tab-fg:    8
+URxvt.tabbed.tab-bg:    14
+
+!URxvt*background: #212121
+!URxvt*foreground: #C0C0C0
+URxvt*background: #000000
+URxvt*foreground: #D0D0D0
+
+! Цвета в man-страницах
+URxvt.colorMode:         on
+URxvt.boldColors:        on
+URxvt.dynamicColors:     on
+URxvt.colorULMode:       on
+URxvt.underLine:         off
+URxvt.colorBDMode:       on
+URxvt.colorBD:           cyan
+
+URxvt.iconFile: /usr/share/icons/hicolor/scalable/apps/nm-device-wired.svg

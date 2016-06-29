@@ -1,0 +1,5 @@
+https_proxy=http://127.0.0.1:8080/
+http_proxy=http://127.0.0.1:8080/
+ftp_proxy=http://127.0.0.1:8080/
+no_proxy=localhost,127.0.0.0/8,local.site,intertnal.infotecs.ru,internal.iitrust.ru,cvs.infotecs.ru,ftp.infotecs.ru,mailserver.infotecs.ru,srvmailstore,cportal.infotecs.ru,regboxproduct.infotecs.ru,msk-wsus-01,mskforefront01.infotecs-nt,statewatcher.infotecs-nt,sw.infotect.ru,srvmskcda01,srvmsktfs2010,sip.infotecs.ru,tfs.infotecs.ru,tfs,srvmsksp01,portal.infotecs.ru,scom.infotecs.ru,buildcvs,ccx.infotecs.ru,digdes.infotecs.ru,devstorage.infotecs.ru,teamcity.infotecs.ru,kvm.infotecs.ru,codereview,codereview.infotecs.ru,SrvMskCA,cati.infotecs.ru,cognos.infotecs.ru,srvmskcognos,srvmskcognos.infonecs-nt,srvsharepoint,vks.infotecs.ru,build,srvmsktfsapp01,srvmsktfsapp01.infotecs-nt
+export http_proxy ftp_proxy no_proxy

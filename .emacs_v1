@@ -1,0 +1,65 @@
+(add-to-list 'load-path "~/.emacs.d/")
+
+;; proxy
+(setq url-proxy-services '(("no_proxy" . "tfs")
+                           ("http" . "10.0.0.1:3128")))
+(custom-set-variables
+'(column-number-mode t)                    ;; внизу будем видеть номер столбца
+'(default-input-method "russian-computer") ;; ну а куда без этого
+'(display-time-mode t)                     ;; ну.. в принципе не надо, но симпатично
+'(tool-bar-mode nil)                       ;; вот он тут точно не нужен
+)
+
+(setq inhibit-startup-message t) ;; не показывать сообщение при старте
+
+(fset 'yes-or-no-p 'y-or-n-p) ;; не заставл€йте мен€ печать yes целиком
+
+(setq default-tab-width 5)
+
+(require 'color-theme)   ;;подгружаем "модуль раскраски"
+(color-theme-initialize) ;;подгрузить библиотеку цветовых схем
+(color-theme-arjen)      ;;выбрать конкретную схему
+
+;; ecb
+(require 'ecb)
+(global-set-key (kbd "\eE") 'ecb-activate)
+
+;; tabs
+(require 'tabbar)
+(tabbar-mode t)
+(global-set-key [(control tab)] 'tabbar-forward)       ;; - переключение вперед
+(global-set-key [(control shift tab)] 'tabbar-backward) ;; а теперь разворачиваемс€ на 180 градусов - и снова вперед
+
+
+;;compilation window shall scroll down
+(setq compilation-scroll-output 1)
+
+(global-set-key (kbd "\em") 'user-save-and-make-all)
+(global-set-key (kbd "\ek") 'kill-compilation)
+
+;;general compile function call "make all"
+(defun user-save-and-make-all ()
+  "save and call compile as make all"
+  (interactive)
+  (save-buffer)
+  (compile "make all")
+  (message "make all executed!"))
+
+
+(custom-set-variables
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(ecb-compile-window-height 10)
+ '(ecb-compile-window-temporally-enlarge (quote after-selection))
+ '(ecb-compile-window-width (quote edit-window))
+ '(ecb-layout-name "left1")
+ '(ecb-prescan-directories-for-emptyness nil)
+ '(ecb-tip-of-the-day nil))
+(custom-set-faces
+  ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ )

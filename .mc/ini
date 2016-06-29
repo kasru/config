@@ -1,0 +1,8 @@
+[Colors]
+base_color=normal=lightgray,black:directory=brightcyan,black:executable=brightgreen,black:link=yellow,black:stalelink=brightred,black:special=lightgrey,black:marked=brightmagenta,black:editnormal=yellow,black:editmarked=black,cyan
+xterm=
+color_terminals=
+rxvt-unicode=
+eterm-color=
+cygwin=
+screen-256color=
