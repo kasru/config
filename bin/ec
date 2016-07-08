@@ -1,0 +1,6 @@
+#!/bin/sh
+
+#export DISPLAY=10.0.2.93:0.0
+#. ~/.proxy
+#~/eclipse/eclipse &
+/usr/local/bin/eclipse &

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+unset _JAVA_OPTIONS
+
+/usr/local/TEE-CLC-14.0.3/tf $*

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+#export DISPLAY=10.0.2.93:0.0
+#urxvt -pe tabbed -bg black -fg gray -fn -misc-fixed-medium-r-normal-*-15-140-75-75-c-90-iso10646-* &
+urxvt&

@@ -78,8 +78,15 @@ URxvt.perl-ext-common:  default,matcher,url-select,tabbedex
 URxvt.matcher.button:   1
 URxvt.urlLauncher:     firefox
 URxvt.underlineURLs:   true
-URxvt.pastableTabs:     true
+URxvt.pastableTabs:    true
 URxvt.keysym.M-u:      perl:url-select:select_next
+
+!URxvt.keysym.M-c:         perl:clipboard:copy
+!URxvt.keysym.M-C-v:       perl:clipboard:paste_escaped
+!URxvt.keysym.M-Escape:    perl:keyboard-select:activate
+!URxvt.keysym.M-s:         perl:keyboard-select:search
+!URxvt.keysym.M-u:         perl:url-select:select_next
+!URxvt.keysym.M-v:         perl:clipboard:paste
 
 URxvt.tabbed.new-button: no
 URxvt.keysym.C-t:      perl:tabbedex:new_tab
@@ -103,3 +110,4 @@ URxvt.colorBDMode:       on
 URxvt.colorBD:           cyan
 
 URxvt.iconFile: /usr/share/icons/hicolor/scalable/apps/nm-device-wired.svg
+URxvt*backgroundPixmap: /home/kas/pic/green.png

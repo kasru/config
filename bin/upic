@@ -1,0 +1,3 @@
+#!/bin/sh
+
+urxvt -pixmap "`find /path/to/tiles/ -name '*.png' | sort -R | head -n 1`;style=tiled"

@@ -1,0 +1,3 @@
+#!/bin/sh
+echo adb forward "tcp:9090" "tcp:9090"
+adb forward "tcp:9090" "tcp:9090"
