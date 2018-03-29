@@ -1,8 +1,5 @@
 [color]
 	ui = auto
-[user]
-	name = Kiselev.Aleksandr
-	email = Aleksandr.Kiselev@infotecs.ru
 [credential]
 	helper = store
 [diff]
@@ -17,6 +14,36 @@
 [alias]
 	dt = difftool
 	mt = mergetool
+	co = checkout
+	ch = checkout
+	ci = commit
+	br = branch
+	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+	pl = pull
+	st = status
+	type = cat-file -t
+	dump = cat-file -p
+
+
+	#Autostash before a git command `git s rebase ....`
+	s = !sh -c \"git stash save | grep 'No local changes to save' && git $* || (git $* && git stash pop) \"
+	autostash = !sh -c \"git s $*\"
+	autopull = !sh -c \"git s pull\"
+	ap = !git autopull
+	pa = !git autopull
+
+	#-------------- display logs-------------
+	#define format...
+	mylogbase = log --pretty=format:'%Cred%h %Cgreen%<(10,trunc)%cd %C(auto)%d%Creset%s %C(bold blue)%an' --abbrev-commit
+	#...and use it!
+	mylog = !git mylogbase --date=relative
+	mylogshort = !git mylogbase --date=short
+	#...with a graph (DAG!)
+	graph = !git mylog --graph
+	#last changes
+	changes = !git mylog --name-status
+	#users stats
+	statdev = shortlog -sn
 [mergetool "bc3"]
 	cmd = /usr/bin/bcompare $LOCAL $REMOTE -savetarget=$MERGED
 	trustExitCode = true
