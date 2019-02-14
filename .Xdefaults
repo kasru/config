@@ -60,33 +60,39 @@ URxvt*color14:    #9BFFFF
 URxvt*color15:    #D0D0D0
 
 URxvt*saveLines: 1000
+URxvt.letterSpace: -1
 !URxvt.font: -*-clean-medium-r-*-*-12-*-*-*-*-*-*-*
 !URxvt.boldFont: -*-clean-bold-r-*-*-12-*-*-*-*-*-*-
 !
 !URxvt.font: -misc-fixed-medium-r-normal-*-15-140-75-75-c-90-iso10646-*
 !URxvt.boldFont: -misc-fixed-bold-r-normal-*-15-140-75-75-c-90-iso10646-*
 !
-URxvt.font: -*-courier-medium-r-*-*-18-*-*-*-*-*-iso10646-*
-URxvt.boldFont: -*-courier-mediam-r-*-*-18-*-*-*-*-*-iso10646-*
+!URxvt.font: -*-courier-medium-r-*-*-18-*-*-*-*-*-iso10646-*
+!URxvt.boldFont: -*-courier-mediam-r-*-*-18-*-*-*-*-*-iso10646-*
 !
 !URxvt.font: -*-fixed-medium-r-*-*-15-*-*-*-*-*-iso10646-*
 !URxvt.boldFont: -*-fixed-bold-r-*-*-15-*-*-*-*-*-iso10646-*
 !
+URxvt*font:           xft:DejaVu Sans Mono:style=Book:pixelsize=18
+URxvt*boldFont:       xft:DejaVu Sans Mono:style=Bold:pixelsize=18
+URxvt*italicFont:     xft:DejaVu Sans Mono:style=Oblique:pixelsize=18
+URxvt*boldItalicFont: xft:DejaVu Sans Mono:style=BoldOblique:pixelsize=18
+
 URxvt*scrollBar: false
 URxvt.perl-lib: /home/kas/.urxvt/perl
-URxvt.perl-ext-common:  default,matcher,url-select,tabbedex
+URxvt.perl-ext-common:  default,matcher,url-select,tabbedex,keyboard-select
 URxvt.matcher.button:   1
 URxvt.urlLauncher:     firefox
 URxvt.underlineURLs:   true
 URxvt.pastableTabs:    true
-URxvt.keysym.M-u:      perl:url-select:select_next
 
-!URxvt.keysym.M-c:         perl:clipboard:copy
-!URxvt.keysym.M-C-v:       perl:clipboard:paste_escaped
-!URxvt.keysym.M-Escape:    perl:keyboard-select:activate
+URxvt.clipboard.autocopy: true
+URxvt.keysym.M-Escape:    perl:keyboard-select:activate
+URxvt.keysym.M-c:         perl:clipboard:copy
+URxvt.keysym.M-v:         perl:clipboard:paste
+URxvt.keysym.M-C-v:       perl:clipboard:paste_escaped
 !URxvt.keysym.M-s:         perl:keyboard-select:search
 !URxvt.keysym.M-u:         perl:url-select:select_next
-!URxvt.keysym.M-v:         perl:clipboard:paste
 
 URxvt.tabbed.new-button: no
 URxvt.keysym.C-t:      perl:tabbedex:new_tab
