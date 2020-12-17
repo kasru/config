@@ -1,0 +1,10 @@
+#!/bin/sh
+
+CLANG_VERSION=8
+
+if [ ! -z "${CLANG_VERSION}" ]; then \
+    for f in $(ls /usr/bin/ll*-${CLANG_VERSION}); do n=${f%-*}; echo "alias ${n##*/} -> $f"; \
+    update-alternatives --install $n ${n##*/} $f 1000; done \
+    && for f in $(ls /usr/bin/cl*-${CLANG_VERSION}); do n=${f%-*}; echo "alias ${n##*/} -> $f"; \
+    update-alternatives --install $n ${n##*/} $f 1000; done \
+fi

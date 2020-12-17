@@ -1,0 +1,4 @@
+#!/bin/sh
+
+git config --local user.name "Kiselev.Alexander"
+git config --local user.email kiselev.alexander@gmail.com

@@ -1,0 +1,12 @@
+#/bin/sh
+
+if [ $# -lt 1 ]; then
+  echo "Usage $0: [docker container]"
+  exit 1
+fi
+
+DockerRegistry="url-docker:5000"
+DockerContainer="$1"
+
+echo "docker pull $DockerRegistry/$DockerContainer"
+docker pull $DockerRegistry/$DockerContainer

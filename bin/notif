@@ -1,0 +1,12 @@
+gdbus call --session \
+           --dest org.freedesktop.Notifications \
+           --object-path /org/freedesktop/Notifications \
+           --method org.freedesktop.Notifications.Notify \
+           my_app_name \
+           42 \
+           "/usr/share/icons/elementary-xfce/panel/22/system-devices-panel-alert.png" \
+           "The Summary" \
+           "Heres the body of the notification" \
+           "['param1','param2']" \
+           "{'service':<'com.example.service'>, 'path':<'/com/example/service'>, 'iface':<'com.example.service'>, 'method':<'trigger'>}" \
+           2

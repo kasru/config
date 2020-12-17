@@ -1,0 +1,3 @@
+#/bin/sh
+DOCKER="url-docker:5000"
+python2 /home/kas/bin/browser.py $DOCKER list all ssl
